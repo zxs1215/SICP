@@ -1,0 +1,10 @@
+#lang planet neil/sicp
+(define (squar x)
+  (* x x))
+(define (addmax x y z)
+  (cond ((and (>= x y) (>= z y)) (+ (squar x) (squar z)))
+        ((and (>= y z) (>= x z)) (+ (squar x) (squar y)))
+        ((and (>= y x) (>= z x)) (+ (squar y) (squar z)))
+        (else -1)
+        ))
+(addmax 4 4 3)
