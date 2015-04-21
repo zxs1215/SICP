@@ -1,0 +1,16 @@
+#lang planet neil/sicp
+(define (make-monitored func)
+  (define dispatch 
+    (let ((balance 0))
+      (lambda (m)
+        (cond ((eq? m 'how-many-calls?) balance)
+              ((eq? m 'reset-count) (set! balance 0))
+              (else (begin (set! balance (+ balance 1)) (func m)))))))
+  dispatch)
+(define s (make-monitored sqrt))
+(s 100)
+(s 9)
+(s 4)
+(s 'how-many-calls?)
+(s 'reset-count) 
+(s 'how-many-calls?)
