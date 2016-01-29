@@ -8,6 +8,7 @@
               (else (begin (set! balance (+ balance 1)) (func m)))))))
   dispatch)
 (define s (make-monitored sqrt))
+
 (s 100)
 (s 9)
 (s 4)
