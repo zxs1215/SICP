@@ -7,3 +7,4 @@
       acc 
       (reverse-1 (cdr l)
                  (cons (car l) acc ))))
+(reverse (list 1 4 9 16 25))
